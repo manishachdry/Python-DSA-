@@ -1,0 +1,92 @@
+Given an array A of size N of integers. Your task is to find the minimum and maximum elements in the array.
+
+ 
+
+Example 1:
+
+Input:
+N = 6
+A[] = {3, 2, 1, 56, 10000, 167}
+Output:
+min = 1, max =  10000
+ 
+
+Example 2:
+
+Input:
+N = 5
+A[]  = {1, 345, 234, 21, 56789}
+Output:
+min = 1, max = 56789
+
+===================================================================
+
+
+def getMinMax( a, n):
+    return min(a) , max(a)
+a = [2,34,56,67,82,3]
+n = 6
+getMinMax(a , n)
+
+====================================================================
+
+def getMinMax( a, n):
+    a = a.sort()
+    return a[0],a[-1]
+a = [2,34,56,67,82,3]
+n = 6
+getMinMax(a , n)
+
+====================================================================
+# LINEAR SEARCH
+
+
+# here we are taking even and odd case so let me tell you why ? 
+it is because am searching min max in the pair let suppose i have this list a = [1 ,4,8,6] here i'll declare a[0] and a[1] 
+means first two elements and after that i will start loop from i = 2 index
+but when it comes to odd number of element i'll take first element as min max a[0] because other then this will be in the paise i'll start loop from 1st index  i = 1.                                     
+
+def getMinMax( a, n):
+    if (n%2==0):
+        mx = max(a[0],a[1])
+        mn = min(a[0] , a[1])
+        i = 2
+    else:
+        mx = a[0]
+        mn = a[0]
+        i = 1
+    while (i<n-1):
+        if a[i] > a[i+1]:
+            mx = max(mx , a[i])
+            mn = min(mn , a[i+1])
+        else :
+            mx = max(mx , a[i+1])
+            mn = min(mn , a[i]) 
+        i += 2
+    return (mn , mx)
+
+n = 8
+arr = [2,3,4,5,6 ,1 , 7 ,0]
+getMinMax(a , n)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
