@@ -1,0 +1,39 @@
+n = 4
+
+arr[] = {1,2,3,4}
+
+x = 3
+
+Output: 2
+
+Explanation: There is one test case with array as {1, 2, 3 4} and element to be searched as 3. 
+Since 3 is present at index 2, output is 2. In case if Element is not present in an array 
+then return -1
+
+
+=====================================================================
+
+def ele(n,arr,x):
+    indx = 0
+    for ele in arr:
+        indx += 1
+        if ele == x :
+            return indx-1
+    return -1
+n = 4
+arr = [2,3,4,5]
+x = 4
+print(ele(n , arr , x))
+
+
+====================================================================
+
+
+def ele(n,arr,x):    
+    if x in arr:
+        return arr.index(x)    # list.index(vlaue)
+    return -1
+n = 4
+arr = [2,3,4,5]
+x = 6
+print(ele(n , arr , x))
